@@ -3,7 +3,7 @@
 $purpleDark: darken($purple, 20);
 $offWhite: darken($white, 3);
 
-////////////////////////////////Mixins////////////////////////////
+////////////////////////////////////////Mixins////////////////////////////////////////////
 
 @mixin rotate($degree) {
   -webkit-transform: rotate($degree);
@@ -13,7 +13,7 @@ $offWhite: darken($white, 3);
   transform: rotate($degree);
 }
 
-////////////////////////////////////Keyframes/////////////////////////
+////////////////////////////////////////Keyframe Animations///////////////////////////////
 
 @keyframes fadeIn {
   0%, 57% {
@@ -38,7 +38,7 @@ $offWhite: darken($white, 3);
   }
 }
 
-//////////////////////////////////Styling////////////////////////////////////
+////////////////////////////////////////Base Stylings/////////////////////////////////////
 
 .half-img,
 .full-img { padding: 0; }
@@ -50,6 +50,12 @@ $offWhite: darken($white, 3);
   &:focus { box-shadow: none; }
 }
 
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .img-content {
   position: absolute;
   width: 100%;
@@ -58,30 +64,39 @@ $offWhite: darken($white, 3);
   left: 0;
 }
 
-.overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.blurb {
+.blurb { 
+  align-self: center;
   h1 { color: $purpleDark; }
 }
 
+.blurb-box-left {
+  float: right;
+  max-width: 70%;
+  padding-right: 75px;
+}
+
+.blurb-box-right {
+  float: right;
+  max-width: 30%;
+  padding-right: 0;
+}
+
+////////////////////////////////////////Modules///////////////////////////////////////////
+
 .title {
-  .welcome {
-    @extend .img-content;
+  .logo-content {
+    max-width: 90%;
+    left: 10%;
+    top: 5%;
+  }
+
+  .welcome-content {
+    max-width: 100%;
     top: 40%;
     color: $white;
     text-align: center;
     animation-duration: 7s;
     animation-name: fadeIn;
-  }
-  .logo-content {
-    @extend .img-content;
-    max-width: 90%;
-    left: 10%;
-    top: 5%;
   }
 
   .logo {
@@ -98,16 +113,6 @@ $offWhite: darken($white, 3);
 
 .about {
   a { color: $purpleDark; }
-
-  .blurb { 
-    align-self: center;
-  }
-
-  .blurb-box {
-    float: right;
-    max-width: 70%;
-    padding-right: 75px;
-  }
 }
 
 .learn-more {
@@ -124,6 +129,12 @@ $offWhite: darken($white, 3);
 
 .features {
   a { color: $purpleDark; }
+
+  .img-content {
+    max-width: 85%;
+    top: 40%;
+    left: 15%;
+  }
 
   .icons {
     background: $offWhite;
