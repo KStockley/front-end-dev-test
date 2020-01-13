@@ -1,1 +1,139 @@
 @import "~bootstrap/scss/bootstrap";
+
+$purpleDark: darken($purple, 20);
+$offWhite: darken($white, 3);
+
+////////////////////////////////Mixins////////////////////////////
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate($degree);
+  -moz-transform: rotate($degree);
+  -o-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+////////////////////////////////////Keyframes/////////////////////////
+
+@keyframes fadeIn {
+  0%, 57% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes spinIn {
+  0%, 25% {
+    @include rotate(0deg)
+    max-width: 80%;
+    top: 50%;
+  }
+
+  100% {
+    @include rotate(360deg);
+    max-width: 20%;
+  }
+}
+
+//////////////////////////////////Styling////////////////////////////////////
+
+.half-img,
+.full-img { padding: 0; }
+
+.btn {
+  color: $white;
+  background: $orange;
+  border-color: $orange;
+  &:focus { box-shadow: none; }
+}
+
+.img-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.blurb {
+  h1 { color: $purpleDark; }
+}
+
+.title {
+  .welcome {
+    @extend .img-content;
+    top: 40%;
+    color: $white;
+    text-align: center;
+    animation-duration: 7s;
+    animation-name: fadeIn;
+  }
+  .logo-content {
+    @extend .img-content;
+    max-width: 90%;
+    left: 10%;
+    top: 5%;
+  }
+
+  .logo {
+    max-width: 20%;
+    animation-name: spinIn;
+    animation-duration: 4s;
+  }
+
+  .btn {
+    background: $purple;
+    border-color: $purple;
+  }
+}
+
+.about {
+  a { color: $purpleDark; }
+
+  .blurb { 
+    align-self: center;
+  }
+
+  .blurb-box {
+    float: right;
+    max-width: 70%;
+    padding-right: 75px;
+  }
+}
+
+.learn-more {
+  h1 {
+    color: $purpleDark;
+  }
+
+  .img-content {
+    max-width: 85%;
+    top: 40%;
+    left: 15%;
+  }
+}
+
+.features {
+  a { color: $purpleDark; }
+
+  .icons {
+    background: $offWhite;
+  }
+}
+
+.etc {
+  
+}
+
+.reviews {
+
+}
