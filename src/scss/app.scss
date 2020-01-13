@@ -13,6 +13,14 @@ $offWhite: darken($white, 3);
   transform: rotate($degree);
 }
 
+@mixin scale($amount) {
+  -webkit-transform: scale($amount);
+  -ms-transform: scale($amount);
+  -o-transform: scale($amount);
+  -ms-transform: scale($amount);
+  transform: scale($amount);
+}
+
 ////////////////////////////////////////Keyframe Animations///////////////////////////////
 
 @keyframes fadeIn {
@@ -66,7 +74,8 @@ $offWhite: darken($white, 3);
 
 .blurb { 
   align-self: center;
-  h1 { color: $purpleDark; }
+  h1,
+  a { color: $purpleDark; }
 }
 
 .blurb-box-left {
@@ -111,9 +120,7 @@ $offWhite: darken($white, 3);
   }
 }
 
-.about {
-  a { color: $purpleDark; }
-}
+.about { }
 
 .learn-more {
   h1 {
@@ -128,21 +135,25 @@ $offWhite: darken($white, 3);
 }
 
 .features {
-  a { color: $purpleDark; }
-
-  .img-content {
-    max-width: 85%;
-    top: 40%;
-    left: 15%;
-  }
+  img:hover { @include scale(1.1); }
 
   .icons {
     background: $offWhite;
   }
+
+  .icon {
+    text-align: center;
+    padding: 0;
+  }
+
+  .icon-ring {
+    border: 1px solid $purple;
+    padding: 35%;
+  }
 }
 
 .etc {
-  
+  .btn { color: $white; }
 }
 
 .reviews {
