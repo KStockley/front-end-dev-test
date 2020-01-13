@@ -84,10 +84,10 @@ $offWhite: darken($white, 3);
   padding-right: 75px;
 }
 
-.blurb-box-right {
-  float: right;
+.full-blurb {
+  @extend .blurb;
   max-width: 30%;
-  padding-right: 0;
+  left: 60%;
 }
 
 ////////////////////////////////////////Modules///////////////////////////////////////////
@@ -154,6 +154,10 @@ $offWhite: darken($white, 3);
 
 .etc {
   .btn { color: $white; }
+
+  .img-content {
+    top: 25%;
+  }
 }
 
 .reviews {
